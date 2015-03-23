@@ -17,7 +17,7 @@ An example showing off Disqus for comments and template from HTML5 UP.
 ---------------------------------------
 ## Credits
 
-[HTML5 UP](html5up.net) - For their cool templates that I'm able to use for artcles.
+[HTML5 UP](http://www.html5up.net) - For their cool templates that I'm able to use for artcles.
 
 [Django Framework](https://www.djangoproject.com/) - Built with Django.
 
