@@ -18,7 +18,7 @@ class ArticleForm(forms.Form):
 					('3', 'Hearthstone'),
 					('4', 'Heroes of the Storm'),
 					('5', 'Smite'),
-					('6', 'Starcraft II')
+					('6', 'Starcraft II'))
 
 	title = forms.CharField(label='Title', max_length=200)
 	content = forms.CharField(label='Content', max_length=10000, widget=forms.Textarea)
