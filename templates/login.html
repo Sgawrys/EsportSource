@@ -1,0 +1,16 @@
+<div class="login" style="float:left">
+	{% if user.is_authenticated %}
+		<form action="logout" method="POST">
+			{% csrf_token %}
+			{{ user.first_name }}
+			<input type="submit" name="submit" value="Logout" />
+			<a href="profile"><i class="fa fa-user"></i></a>
+		</form>
+	{% else %}
+		<form action="login" method="POST">
+			{% csrf_token %}
+			{{ login }}
+			<input type="submit" name="submit" value="Submit"/>
+		</form>
+	{% endif %}
+</div>
