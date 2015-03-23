@@ -142,7 +142,16 @@ def profileView(request):
 			current_user = User.objects.get(username = request.user.username)
 			current_user.first_name = form.cleaned_data['first_name']
 			current_user.last_name = form.cleaned_data['last_name']
+			author_info = AuthorInfo.objects.get(user=current_user)
+			author_info.blurb = form.cleaned_data['blurb']
+			author_info.fb_link = form.cleaned_data['fb_link']
+			author_info.twitter_link = form.cleaned_data['twitter_link']
+			author_info.github_link = form.cleaned_data['github_link']
+			author_info.email = form.cleaned_data['email']
+			author_info.instagram_link = form.cleaned_data['instagram_link']
+			author_info.image = form.cleaned_data['image_link']		
 			current_user.save()
+			author_info.save()
 		else:
 			print "Form is not valid"
 			print form.errors

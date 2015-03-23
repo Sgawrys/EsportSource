@@ -19,4 +19,4 @@ class AuthorInfo(models.Model):
 	github_link = models.CharField(max_length=200, blank=True)
 	email = models.CharField(max_length=200, blank=True)
 	instagram_link = models.CharField(max_length=200, blank=True)
-	image = models.ImageField(upload_to="/img")
+	image = models.ImageField(upload_to='img')
