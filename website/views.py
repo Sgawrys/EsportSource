@@ -28,8 +28,8 @@ class ArticleForm(forms.Form):
 	Form for authenticating users, needs registration form still.
 '''
 class LoginForm(forms.Form):
-	username = forms.CharField(label='Username', max_length=16)
-	password = forms.CharField(widget=forms.PasswordInput())
+	username = forms.CharField(widget=forms.TextInput(attrs={'style': 'width:150px'}), label='Username', max_length=16)
+	password = forms.CharField(widget=forms.PasswordInput(attrs={'style':'width:150px'}))
 
 '''
 	Form that allows users to change their personal information that
