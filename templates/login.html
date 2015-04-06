@@ -1,3 +1,5 @@
+
+
 <div class="login" style="float:left">
 	{% if user.is_authenticated %}
 		<form action="logout" method="POST">
@@ -14,4 +16,34 @@
 		</form>
 	{% endif %}
 </div>
-<button class="button">Register</button>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#registration").click(function() {
+
+		});
+	});
+</script>
+<div class="modal">
+  <input id="modal_1" type="checkbox" />
+  <label for="modal_1" class="overlay"></label>
+  <article>
+    <header>
+      <h3>Register a new account!</h3>
+      <label for="modal_1" class="close">&times;</label>
+    </header>
+    <section class="content">
+    	<form action="register" method="POST">
+    		{% csrf_token %}
+    		{{ register }}
+    		<br/>
+    		<input type="submit" name="submit" value="Submit" />
+    	</form>
+    </section>
+    <footer>
+      <label for="modal_1" class="button error">
+        Close
+      </label>
+    </footer>
+  </article>
+</div>
+<label for="modal_1" id="registration" class="button">Register</label>

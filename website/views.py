@@ -32,6 +32,15 @@ class LoginForm(forms.Form):
 	password = forms.CharField(widget=forms.PasswordInput(attrs={'style':'width:150px'}))
 
 '''
+	Form for registering a new user account on the website.
+'''
+class RegisterForm(forms.Form):
+	username = forms.CharField(widget=forms.TextInput(), label='Username', max_length=16)
+	password = forms.CharField(widget=forms.PasswordInput())
+	confirm_password = forms.CharField(widget=forms.PasswordInput())
+	email = forms.EmailField()
+
+'''
 	Form that allows users to change their personal information that
 	is displayed on articles written by those respective users.
 '''
@@ -59,10 +68,12 @@ def index(request):
 	articles = Article.objects.all()[:5]
 	template = loader.get_template('index.html')
 	login_form = LoginForm()
+	register_form = RegisterForm()
 	context = RequestContext(request, {
 		'articles' : articles,
 		'form' : article_form,
-		'login' : login_form
+		'login' : login_form,
+		'register' : register_form
 		})
 	return HttpResponse(template.render(context))
 
@@ -162,3 +173,19 @@ def profileView(request):
 		'profile' : profileForm
 		})
 	return HttpResponse(template.render(context))
+
+'''
+	Allows submittal of registration form for purposes of new user account
+	creation.
+'''
+def register(request):
+	#Send e-mail about registration to click link
+	if request.method == 'POST':
+		form = RegisterForm(request.POST)
+		if form.is_valid():
+			new_user = User.objects.create_user(form.cleaned_data['username'], form.cleaned_data['email'], form.cleaned_data['password'], last_login = datetime.datetime.now())
+			user = authenticate(username = form.cleaned_data['username'], password = form.cleaned_data['password'])
+			if user is not None:
+				login(request, user)
+			new_user.save()
+	return redirect('profile')
