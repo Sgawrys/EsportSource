@@ -11,7 +11,12 @@
 			h1 {
 				margin-top: 60px;
 			}
+			.wmd-panel{
+				margin-left:0% !important;
+				margin-right:0% !important;
+			}
 		</style>
+		{{form.media}}
 		<script type="text/javascript">
 			$(document).ready(function() {
 				$("#league").on('click', function() {
@@ -78,8 +83,10 @@
 		</script>
 	</head>
 	<body>
+
 		<center><h1>Latest Articles</h1></center>
 		
+						<center><label for="modal_2" id="writestory" class="button">Write a story</label></center>
 		<section>
 			<div class="render">
 				<div class="row" style="overflow:hidden">
@@ -101,14 +108,31 @@
 						</p>
 					</div>
 					<div class="third">
-						<h4>Write a story:</h4>
-						<form id="story" method="post" action="">
-							{% csrf_token %}
-							<table>
-							{{form}}
-							</table>
-							<input type="submit" name="submit" value="Submit Story"></input>
-						</form>
+						<div class="modal">
+						  <input id="modal_2" type="checkbox" />
+						  <label for="modal_2" class="overlay"></label>
+						  <article>
+						    <header>
+						      <h4>Write a story:</h4>
+						      <label for="modal_2" class="close">&times;</label>
+						    </header>
+						    <section class="content">
+								<form id="story" method="post" action="">
+									{% csrf_token %}
+									<table>
+									{{form}}
+									</table>
+									<input type="submit" name="submit" value="Submit Story"></input>
+								</form>
+						    </section>
+						    <footer>
+						      <label for="modal_2" class="button error">
+						        Close
+						      </label>
+						    </footer>
+						  </article>
+						</div>
+						
 					</div>
 				</div>
 			</div>

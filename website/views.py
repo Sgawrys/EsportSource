@@ -5,6 +5,7 @@ from website.models import Article, AuthorInfo
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django import forms
+from pagedown.widgets import PagedownWidget
 import datetime
 
 '''
@@ -21,8 +22,8 @@ class ArticleForm(forms.Form):
 					('6', 'Starcraft II'))
 
 	title = forms.CharField(label='Title', max_length=200)
-	content = forms.CharField(label='Content', max_length=10000, widget=forms.Textarea)
-	game_id = forms.ChoiceField(widget=forms.Select, choices=game_options)
+	content = forms.CharField(widget=PagedownWidget())
+	game_id = forms.ChoiceField(label = 'Game',widget=forms.Select, choices=game_options)
 
 '''
 	Form for authenticating users, needs registration form still.

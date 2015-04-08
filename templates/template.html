@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load markdown_deux_tags %}
 <!DOCTYPE HTML>
 <!--
 	Read Only by HTML5 UP
@@ -52,7 +53,7 @@
 								<h2>{{ article.title }}</h2>
 								<h5>Published {{ article.date }}</h5><br />
 							</header>
-							<p>{{ article.content }}</p>
+							<p>{{ article.content|markdown }}</p>
 						</div>
 					</section>
 						<div id="disqus_thread" class="container"></div>
