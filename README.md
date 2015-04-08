@@ -26,3 +26,5 @@ An example showing off Disqus for comments and template from HTML5 UP.
 [Django Pagedown](https://github.com/timmyomahony/django-pagedown) - For a markdown editor when writing a new article.
 
 [Django Markdown Deux](https://github.com/trentm/django-markdown-deux) - For markdown rendering on article pages.
+
+[Disqus](https://disqus.com/) - For comment sections on various articles.
