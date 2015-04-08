@@ -22,3 +22,7 @@ An example showing off Disqus for comments and template from HTML5 UP.
 [Django Framework](https://www.djangoproject.com/) - Built with Django.
 
 [Picnic CSS](http://www.picnicss.com/) - Decided I wanted something different from bootstrap.
+
+[Django Pagedown](https://github.com/timmyomahony/django-pagedown) - For a markdown editor when writing a new article.
+
+[Django Markdown Deux](https://github.com/trentm/django-markdown-deux) - For markdown rendering on article pages.
