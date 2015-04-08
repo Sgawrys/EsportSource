@@ -10,10 +10,10 @@ Still a work in progress.
 ## Images
 ---------------------------------------
 Home page which displays latest articles from particular games, or just latest five in general.
-![Home Page](https://github.com/Sgawrys/EsportSource/raw/master/media/esport_1.png "Login")
+![Home Page](https://github.com/Sgawrys/EsportSource/raw/master/media/esports_1.png "Login")
 ---------------------------------------
 An example showing off Disqus for comments and template from HTML5 UP.
-![Article Example](https://github.com/Sgawrys/EsportSource/raw/master/media/esport_2.png "Article")
+![Article Example](https://github.com/Sgawrys/EsportSource/raw/master/media/esports_2.png "Article")
 ---------------------------------------
 ## Credits
 
