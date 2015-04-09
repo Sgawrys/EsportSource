@@ -1038,7 +1038,6 @@
 /* One */
 
 	#one:before {
-		background-image: url("../images/banner.jpg");
 		background-position: top right;
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -1048,6 +1047,27 @@
 		width: 100%;
 	}
 
+	.csgo:before {
+		background-image: url("../images/csgo_banner.png") !important;
+	}
+	.league:before {
+		background-image: url("../images/league_banner.png") !important;
+	}
+	.dota:before {
+		background-image: url("../images/dota_banner.png") !important;
+	}
+	.hs:before {
+		background-image: url("../images/hearthstone_banner.png") !important;
+	}
+	.heroes:before {
+		background-image: url("../images/heroes_banner.png") !important;
+	}
+	.sc2:before {
+		background-image: url("../images/starcraft_banner.png") !important;
+	}
+	.smite:before {
+		background-image: url("../images/smite_banner.png") !important;
+	}
 /* Footer */
 
 	#footer {

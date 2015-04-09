@@ -23,6 +23,20 @@
 		<link rel="stylesheet" href="{% static "css/style.css" %}" />
 		<link rel="stylesheet" href="{% static "css/style-xlarge.css" %}" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+				switch({{article.game_id}}) {
+					case 0: $("#one").addClass("league"); break;
+					case 1: $("#one").addClass("csgo"); break;
+					case 2: $("#one").addClass("dota"); break;
+					case 3: $("#one").addClass("hs"); break;
+					case 4: $("#one").addClass("heroes"); break;
+					case 5: $("#one").addClass("smite"); break;
+					case 6: $("#one").addClass("sc2"); break;
+				}
+			});
+		</script>
 	</head>
 	<body>
 		<div id="wrapper">
